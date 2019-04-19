@@ -6,7 +6,14 @@ Currently, this contains SimpleCombat.py, AlliedNation.csv, and Akatsuki.csv. To
 ```
 python SimpleCombat.py
 ```
+
 from the directory with SimpleCombat.py, AlliedNation.csv, and Akatsuki.csv in it. A battle log will be printed to the terminal, and the survivors will be put in csv files in AlliedNationPost.csv and AkatsukiPost.csv.
+
+If you'd like to save the battle log, just copy and redirect the output to a file, so, on git bash or unix:
+
+```
+python SingleCombat.py | tee BattleLog.log
+```
 
 To adjust the combatants, simply modify the csv files for either AlliendNations or Akatsuki. A data spec for the CSV files follows:
 
