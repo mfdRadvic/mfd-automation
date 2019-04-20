@@ -15,6 +15,12 @@ If you'd like to save the battle log, just copy and redirect the output to a fil
 python SingleCombat.py | tee BattleLog.log
 ```
 
+There is also now a mode which can add injuries to the winning side. To use this code, add a death after the call to SingleCombat.py. e.g.
+
+```
+python SingleCombat.py death | tee BattleLog.log
+```
+
 To adjust the combatants, simply modify the csv files for either AlliendNations or Akatsuki. A data spec for the CSV files follows:
 
 Name -- the name of each ninja. Need not be unique, though more legible if so.

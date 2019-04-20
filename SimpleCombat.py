@@ -2,15 +2,16 @@
 import pandas as pd
 import numpy as np
 import random
+import sys
 
-def main(side1='AlliedNations', side2='Akatsuki'):
+def main(side1='AlliedNations', side2='Akatsuki', mode='Standard'):
     '''This runs the main function including loading the data, running
     combat and printing the data'''
     s1_df, s2_df = load_sides(side1=side1, side2=side2)
     ps1 = s1_df.copy()
     ps2 = s2_df.copy()
     while len(s1_df) > 0 and len(s2_df) > 0:
-        combat_loop(s1_df, s2_df, side1, side2)
+        combat_loop(s1_df, s2_df, side1, side2, mode=mode)
     save_results(s1_df, s2_df, side1=side1, side2=side2)
 
 def load_sides(side1, side2):
@@ -31,19 +32,27 @@ def save_results(ps1, ps2, side1, side2):
     ps2.to_csv(side2,index=False)
 
 
-def combat_loop(s1_df, s2_df, side1, side2):
+def combat_loop(s1_df, s2_df, side1, side2, mode='Standard'):
     '''This runs the main combat loop'''
     s1_pow = calc_power(s1_df)
     print('{} rolled {}'.format(side1, s1_pow))
     s2_pow = calc_power(s2_df)
     print('{} rolled {}'.format(side2, s2_pow))
-    wounds = calc_wounds(s1_pow, s2_pow, s1_df, s2_df)
-    if wounds < 0: #Side 2 won
-        print('{} won, distributing {} wounds'.format(side2, -wounds))
-        distribute_wounds(-wounds, s1_df)
-    else: #Side 1 won
-        print('{} won, distributing {} wounds'.format(side1, wounds))
-        distribute_wounds(wounds, s2_df)
+    if mode == 'death':
+        s1_wounds = np.ceil(s2_pow / s1_pow)
+        s2_wounds = np.ceil(s1_pow / s2_pow)
+        print('{} took {} injuries. Distributing wounds.'.format(side1, s1_wounds))
+        distribute_wounds(s1_wounds, s1_df)
+        print('{} took {} injuries. Distributing wounds.'.format(side2, s2_wounds))
+        distribute_wounds(s2_wounds, s2_df)
+    else:
+        wounds = calc_wounds(s1_pow, s2_pow, s1_df, s2_df)
+        if wounds < 0: #Side 2 won
+            print('{} won, distributing {} wounds'.format(side2, -wounds))
+            distribute_wounds(-wounds, s1_df)
+        else: #Side 1 won
+            print('{} won, distributing {} wounds'.format(side1, wounds))
+            distribute_wounds(wounds, s2_df)
 
 def calc_wounds(pow1, pow2, s1_df, s2_df):
     '''This calculates how many wounds to give out'''
@@ -87,4 +96,8 @@ def calc_power(i_df, srank_wgt=0.1):
     return df['Power'].sum()
 
 if __name__ == '__main__':
-    main()
+    if len(sys.argv) > 1:
+        mode = sys.argv[1]
+    else:
+        mode = 'Standard'
+    main(mode=mode)
