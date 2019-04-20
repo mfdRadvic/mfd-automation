@@ -50,10 +50,10 @@ def calc_wounds(pow1, pow2, s1_df, s2_df):
     wounds = (pow1 - pow2) / (pow1 + pow2)
     if wounds > 0:
         ava_wounds = len(s1_df)*2
-        wounds = np.ceil(wounds* ava_wounds)
+        wounds = 1#np.ceil(wounds* ava_wounds)
     else:
         ava_wounds = len(s2_df)*2
-        wounds= np.floor(wounds * ava_wounds)
+        wounds= -1#np.floor(wounds * ava_wounds)
     print('Of {} potential wounds, {} were made'.format(ava_wounds, wounds))
     return wounds
 
