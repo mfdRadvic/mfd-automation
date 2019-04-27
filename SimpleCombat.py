@@ -8,11 +8,12 @@ def main(side1='AlliedNations', side2='Akatsuki', mode='Standard'):
     '''This runs the main function including loading the data, running
     combat and printing the data'''
     s1_df, s2_df = load_sides(side1=side1, side2=side2)
+    cols = s1_df.columns
     ps1 = s1_df.copy()
     ps2 = s2_df.copy()
     while len(s1_df) > 0 and len(s2_df) > 0:
-        combat_loop(s1_df, s2_df, side1, side2, mode=mode)
-    save_results(s1_df, s2_df, side1=side1, side2=side2)
+        s1_df, s2_df = combat_loop(s1_df, s2_df, side1, side2, mode=mode)
+    save_results(s1_df[cols], s2_df[cols], side1=side1, side2=side2)
 
 def load_sides(side1, side2):
     '''This loads the two sides of the conflict'''
@@ -31,11 +32,24 @@ def save_results(ps1, ps2, side1, side2):
     ps1.to_csv(side1,index=False)
     ps2.to_csv(side2,index=False)
 
+def calc_buffs(df):
+    '''This method adds buffs to the appropriate characters'''
+    buffs = df[['Name','BuffGiving','BuffNumber']]
+    stacks = pd.DataFrame({'Buff':[0],'Charges':[0]})
+    f_buffs = []
+    for idx, row in buffs.iterrows():
+        stacks['Charges'] = stacks['Charges'] - 1
+        buff = stacks.query('Charges >= 0')['Buff'].sum()
+        stacks = stacks.append(pd.DataFrame({'Buff':[row['BuffGiving']],'Charges':[row['BuffNumber']]}))
+        df.loc[idx,'GivenBuff'] = buff
+    return df
 
 def combat_loop(s1_df, s2_df, side1, side2, mode='Standard'):
     '''This runs the main combat loop'''
+    s1_df = calc_buffs(s1_df)
     s1_pow = calc_power(s1_df)
     print('{} rolled {}'.format(side1, s1_pow))
+    s2_df = calc_buffs(s2_df)
     s2_pow = calc_power(s2_df)
     print('{} rolled {}'.format(side2, s2_pow))
     if mode == 'death':
@@ -53,6 +67,7 @@ def combat_loop(s1_df, s2_df, side1, side2, mode='Standard'):
         else: #Side 1 won
             print('{} won, distributing {} wounds'.format(side1, wounds))
             distribute_wounds(wounds, s2_df)
+    return s1_df, s2_df
 
 def calc_wounds(pow1, pow2, s1_df, s2_df):
     '''This calculates how many wounds to give out'''
@@ -86,7 +101,7 @@ def calc_power(i_df, srank_wgt=0.1):
     df['InjuryLimit'] = (df['DefensiveBuffs'] - df['Wounds'] + 2) / 2
     df['ones'] = 1
     df['InjuryMult'] = df.apply(lambda x: min(x['InjuryLimit'],1), axis=1)
-    df['Multipler'] = (1 + df['S-ranks'] * srank_wgt + df['AlliedBuff'] + df['FocusAdd']) * df['InjuryMult']
+    df['Multipler'] = (1 + df['S-ranks'] * srank_wgt + df['AlliedBuff'] + df['FocusAdd'] + df['GivenBuff']) * df['InjuryMult']
     df['MaxPower'] = df['XP'] * df['Multipler']
 
     df['Power'] = df['MaxPower'] * np.random.rand(len(df))

@@ -1,3 +1,3 @@
-Name,XP,Focus,S-ranks,AlliedBuff,DefensiveBuffs,Wounds
-Itachi,15000,Combat,5,0.1,0,0
-PuppetPerson,25000,Combat,1,0.1,3,0
+Name,XP,Focus,S-ranks,AlliedBuff,DefensiveBuffs,Wounds,BuffGiving,BuffNumber
+Itachi,15000,Combat,5,0.1,0,0,0,0
+PuppetPerson,25000,Combat,1,0.1,3,0,0,0

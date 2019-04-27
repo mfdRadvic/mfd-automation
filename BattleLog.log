@@ -1,80 +1,52 @@
 Side Summary:
       Name         Power  MaxPower  MaxWounds  Wounds
-0  Jiraiya  26530.127630   28000.0          4       0
-1        A   1939.929778   25500.0          2       0
-2      Ren   1519.572872   13200.0          2       0
-AlliedNations rolled 29989.630279907946
+0      Ren    789.622591   13200.0          2       0
+1  Jiraiya  14015.532504   30000.0          4       0
+2        A  18210.674935   28500.0          2       0
+AlliedNations rolled 33015.830029403805
 Side Summary:
            Name         Power  MaxPower  MaxWounds  Wounds
-0        Itachi   3340.097222   27000.0          2       0
-1  PuppetPerson  34255.108726   35000.0          5       0
-Akatsuki rolled 37595.20594741461
+0        Itachi  23390.385258   27000.0          2       0
+1  PuppetPerson  15821.231606   35000.0          5       0
+Akatsuki rolled 39211.616863866664
 AlliedNations took 2.0 injuries. Distributing wounds.
-Jiraiya recieved a wound. Current Wounds = 1, max wounds = 4
+Ren recieved a wound. Current Wounds = 1, max wounds = 2
 A recieved a wound. Current Wounds = 1, max wounds = 2
 Akatsuki took 1.0 injuries. Distributing wounds.
 PuppetPerson recieved a wound. Current Wounds = 1, max wounds = 5
 Side Summary:
       Name         Power  MaxPower  MaxWounds  Wounds
-0  Jiraiya  17275.235732   28000.0          4       1
-1        A   9990.872981   12750.0          2       1
-2      Ren   8326.476553   13200.0          2       0
-AlliedNations rolled 35592.585266718
+0      Ren   3405.039368    6600.0          2       1
+1  Jiraiya  18858.508086   30000.0          4       0
+2        A   4096.244431   14250.0          2       1
+AlliedNations rolled 26359.791885128285
 Side Summary:
-           Name         Power  MaxPower  MaxWounds  Wounds
-0        Itachi   5203.650542   27000.0          2       0
-1  PuppetPerson  27323.835284   35000.0          5       1
-Akatsuki rolled 32527.485825965894
+           Name        Power  MaxPower  MaxWounds  Wounds
+0        Itachi   910.017981   27000.0          2       0
+1  PuppetPerson  9341.457974   35000.0          5       1
+Akatsuki rolled 10251.475955397742
 AlliedNations took 1.0 injuries. Distributing wounds.
-Jiraiya recieved a wound. Current Wounds = 2, max wounds = 4
-Akatsuki took 2.0 injuries. Distributing wounds.
-PuppetPerson recieved a wound. Current Wounds = 2, max wounds = 5
-PuppetPerson recieved a wound. Current Wounds = 3, max wounds = 5
-Side Summary:
-      Name        Power  MaxPower  MaxWounds  Wounds
-0  Jiraiya  2239.784036   28000.0          4       2
-1        A  5680.971418   12750.0          2       1
-2      Ren  2582.764435   13200.0          2       0
-AlliedNations rolled 10503.519889349745
-Side Summary:
-           Name         Power  MaxPower  MaxWounds  Wounds
-0        Itachi  22545.687309   27000.0          2       0
-1  PuppetPerson   7771.155115   35000.0          5       3
-Akatsuki rolled 30316.84242401778
-AlliedNations took 3.0 injuries. Distributing wounds.
-Ren recieved a wound. Current Wounds = 1, max wounds = 2
 Ren recieved a wound. Current Wounds = 2, max wounds = 2
 Ren has died. Removing from battle calculations
-A recieved a wound. Current Wounds = 2, max wounds = 2
-A has died. Removing from battle calculations
-Akatsuki took 1.0 injuries. Distributing wounds.
+Akatsuki took 3.0 injuries. Distributing wounds.
 Itachi recieved a wound. Current Wounds = 1, max wounds = 2
-Side Summary:
-      Name         Power  MaxPower  MaxWounds  Wounds
-0  Jiraiya  25089.961155   28000.0          4       2
-AlliedNations rolled 25089.96115538769
-Side Summary:
-           Name         Power  MaxPower  MaxWounds  Wounds
-0        Itachi     10.616454   13500.0          2       1
-1  PuppetPerson  21146.308939   35000.0          5       3
-Akatsuki rolled 21156.925392872137
-AlliedNations took 1.0 injuries. Distributing wounds.
-Jiraiya recieved a wound. Current Wounds = 3, max wounds = 4
-Akatsuki took 2.0 injuries. Distributing wounds.
+PuppetPerson recieved a wound. Current Wounds = 2, max wounds = 5
 Itachi recieved a wound. Current Wounds = 2, max wounds = 2
 Itachi has died. Removing from battle calculations
-PuppetPerson recieved a wound. Current Wounds = 4, max wounds = 5
 Side Summary:
-      Name        Power  MaxPower  MaxWounds  Wounds
-0  Jiraiya  6408.703806   14000.0          4       3
-AlliedNations rolled 6408.703805807713
+      Name         Power  MaxPower  MaxWounds  Wounds
+0  Jiraiya  19596.881975   28000.0          4       0
+1        A   9435.201062   13500.0          2       1
+AlliedNations rolled 29032.08303715063
 Side Summary:
            Name         Power  MaxPower  MaxWounds  Wounds
-0  PuppetPerson  16730.105046   17500.0          5       4
-Akatsuki rolled 16730.105046332676
-AlliedNations took 3.0 injuries. Distributing wounds.
-Jiraiya recieved a wound. Current Wounds = 4, max wounds = 4
-Jiraiya has died. Removing from battle calculations
-Akatsuki took 1.0 injuries. Distributing wounds.
+0  PuppetPerson  12530.382028   35000.0          5       2
+Akatsuki rolled 12530.382028494489
+AlliedNations took 1.0 injuries. Distributing wounds.
+Jiraiya recieved a wound. Current Wounds = 1, max wounds = 4
+Akatsuki took 3.0 injuries. Distributing wounds.
+PuppetPerson recieved a wound. Current Wounds = 3, max wounds = 5
+PuppetPerson recieved a wound. Current Wounds = 4, max wounds = 5
 PuppetPerson recieved a wound. Current Wounds = 5, max wounds = 5
 PuppetPerson has died. Removing from battle calculations
+Akatsuki has perished. Victory goes to AlliedNations.

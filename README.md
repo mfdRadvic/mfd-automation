@@ -30,3 +30,5 @@ S-ranks -- the number of relevant S-rank techniques this ninja knows -- translat
 AlliedBuff -- a straight fudge factor on power levels. 0.1 means an additional 0.1 multiplier to power
 DefensiveBuffs -- number or intensity of defensive techniques known. This translates to additional health (normally, ninja have 2 health)
 Wounds -- Number of wounds a ninja currently has
+BuffGiving -- power of buff given to other allies. Note: only gives to allies below themselves in the list
+BuffNumber -- number of allies below themselves to apply their BuffGiving to.

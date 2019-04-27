@@ -1,4 +1,4 @@
-Name,XP,Focus,S-ranks,AlliedBuff,DefensiveBuffs,Wounds
-Jiraiya,20000,,3,0.1,2,0
-A,15000,Combat,4,0.1,0,0
-Ren,12000,Social,2,0.1,0,0
+Name,XP,Focus,S-ranks,AlliedBuff,DefensiveBuffs,Wounds,BuffGiving,BuffNumber
+Ren,12000,Social,2,0.1,0,0,0.1,2
+Jiraiya,20000,,3,0.1,2,0,0.1,1
+A,15000,Combat,4,0.1,0,0,0,0
